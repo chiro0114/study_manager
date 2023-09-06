@@ -2,24 +2,20 @@ import SidebarItem from "./SidebarItem";
 
 const sidebarItems = [
   {
-    id: "todo",
     title: "Todo",
-    href: "",
+    href: "/todo",
   },
   {
-    id: "diary",
     title: "Diary",
-    href: "",
+    href: "/diary",
   },
   {
-    id: "list",
     title: "List",
-    href: "",
+    href: "/list",
   },
   {
-    id: "logout",
     title: "Logout",
-    href: "",
+    href: "/logout",
   },
 ];
 
@@ -28,7 +24,7 @@ const Sidebar = () => {
     <div className="nueumorphism rounded-md bg-main mt-28 ml-5">
       <ul className="mt-7 mx-2 mb-24">
         {sidebarItems.map((items) => (
-          <SidebarItem key={items.id} items={items} />
+          <SidebarItem key={items.href} items={items} />
         ))}
       </ul>
     </div>

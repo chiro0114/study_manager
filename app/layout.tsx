@@ -14,9 +14,7 @@ const monstserrat = Montserrat({
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ja" className={monstserrat.className}>
-      <body className="text-cMain min-h-screen">
-        <Wrapper>{children}</Wrapper>
-      </body>
+      <body className="text-cMain min-h-screen">{children}</body>
     </html>
   );
 }

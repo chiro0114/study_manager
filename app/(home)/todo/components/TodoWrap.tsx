@@ -1,5 +1,4 @@
 import React from "react";
-import Heading from "./Heading";
 import TodoItem from "./TodoItem";
 
 type TodoWrapType = {
@@ -9,7 +8,9 @@ type TodoWrapType = {
 const TodoWrap: React.FC<TodoWrapType> = ({ heading }) => {
   return (
     <div className="basis-1/3">
-      <Heading text={heading} />
+      <div className="nueumorphism w-full py-3">
+        <h3 className="text-2xl font-bold text-center tracking-wide">{heading}</h3>
+      </div>
       <TodoItem />
     </div>
   );

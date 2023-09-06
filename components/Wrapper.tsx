@@ -7,7 +7,7 @@ type WrapperProps = {
 
 const Wrapper: React.FC<WrapperProps> = ({ children }) => {
   return (
-    <div className="flex">
+    <div className="flex text-cMain">
       <Sidebar />
       <div className="flex-1 ml-16 mr-9">
         <Header />

@@ -1,14 +1,13 @@
+import CategoryTag from "@/components/CategoryTag";
 import Link from "next/link";
 import React from "react";
 import { MdCalendarToday } from "react-icons/md";
 
 const TodoItem = () => {
   return (
-    <div className="nueumorphism py-4 px-4 mt-6">
-      <div className="acc-nueumorphism w-fit px-3 rounded-full">
-        <Link href="/" className="text-main text-xs">
-          プログラミング
-        </Link>
+    <Link href="/" className="block nueumorphism py-4 px-4 mt-6">
+      <div className="flex gap-2">
+        <CategoryTag text="プログラミング" />
       </div>
       <p className="text-lg font-bold mt-2">Todoのタイトル</p>
       <p className="font-bold mt-1">
@@ -20,7 +19,7 @@ const TodoItem = () => {
           <p className="ml-1 text-sm font-bold">6/6</p>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
