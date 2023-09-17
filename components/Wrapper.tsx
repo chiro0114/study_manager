@@ -1,5 +1,6 @@
-import Header from "./header";
-import Sidebar from "./sidebar";
+import { css } from '@/styled-system/css';
+import Header from './header';
+import Sidebar from './sidebar';
 
 type WrapperProps = {
   children: React.ReactNode;
@@ -7,9 +8,9 @@ type WrapperProps = {
 
 const Wrapper: React.FC<WrapperProps> = ({ children }) => {
   return (
-    <div className="flex text-cMain">
+    <div className={css({ display: 'flex' })}>
       <Sidebar />
-      <div className="flex-1 ml-16 mr-9">
+      <div className={css({ flex: '1', ml: '64px', mr: '36px' })}>
         <Header />
         {children}
       </div>

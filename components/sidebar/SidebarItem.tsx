@@ -1,9 +1,8 @@
-"use client";
+'use client';
 
-import { twMerge } from "tailwind-merge";
-import Button from "../Button";
-import { usePathname } from "next/navigation";
-import Link from "next/link";
+import Button from '../Button';
+import Link from 'next/link';
+import { css } from '@/styled-system/css';
 
 type SidebarItemProps = {
   items: {
@@ -14,16 +13,19 @@ type SidebarItemProps = {
 
 const SidebarItem: React.FC<SidebarItemProps> = ({ items }) => {
   const { title, href } = items;
-  const pathname = usePathname();
 
   return (
     <div>
       <Link href={href}>
         <Button
-          className={twMerge(
-            `text-3xl py-4  mb-5 w-52 rounded-full tracking-wide`,
-            href === pathname && "press-neumorphism"
-          )}
+          className={css({
+            fontSize: '30px',
+            py: '16px',
+            mb: '20px',
+            w: '208px',
+            rounded: '50%',
+            letterSpacing: '1px',
+          })}
         >
           {title}
         </Button>

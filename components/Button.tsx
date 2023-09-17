@@ -1,15 +1,15 @@
-import React, { ComponentProps } from "react";
-import { twMerge } from "tailwind-merge";
+import { css, cx } from '@/styled-system/css';
+import { ComponentProps } from 'react';
 
 type ButtonProps = {
+  css?: any;
   children: React.ReactNode;
-  className?: string;
-} & ComponentProps<"button">;
+} & ComponentProps<'button'>;
 
-const Button: React.FC<ButtonProps> = ({ children, className }) => {
+const Button: React.FC<ButtonProps> = ({ css: cssProp, children }) => {
   return (
-    <div>
-      <button className={twMerge(`font-bold cursor-pointer`, className)}>{children}</button>
+    <div className={cx(cssProp)}>
+      <button className={css({ display: 'block' })}>{children}</button>
     </div>
   );
 };

@@ -1,3 +1,5 @@
+import { css } from '@/styled-system/css';
+
 export default function IndexPage() {
-  return <div className="mr-16">helloe</div>;
+  return <div className={css({ mr: '64px' })}>helloe</div>;
 }

@@ -1,18 +1,42 @@
-import React, { ComponentProps } from "react";
-import { twMerge } from "tailwind-merge";
+import { css, cx } from '@/styled-system/css';
+import React, { ComponentProps } from 'react';
 
 type InputType = {
-  className: string;
-} & ComponentProps<"input">;
+  css?: any;
+} & ComponentProps<'input'>;
 
-const Input: React.FC<InputType> = ({ className }) => {
+const Input: React.FC<InputType> = ({ css: cssProp, ...props }) => {
   return (
     <input
       type="text"
-      className={twMerge(
-        `block text-base bg-transparent  border-transparent  file:border-0 file:bg-transparent file:text-base file:font-medium placeholder:text-[#B7C5D4] disabled:cursor-not-allowed disabled:opacity-50 focus:outline-none`,
-        className
+      className={cx(
+        css({
+          display: 'block',
+          fontSize: '16px',
+          backgroundColor: 'transparent',
+          borderColor: 'transparent',
+          touchAction: 'manipulation',
+          outline: 'none',
+          _file: {
+            border: '0',
+            fontSize: '16px',
+            backgroundColor: 'transparent',
+            borderColor: 'transparent',
+          },
+          _placeholder: {
+            color: '#B7C5D4',
+          },
+          _disabled: {
+            cursor: 'not-allowed',
+            opacity: '0.5',
+          },
+          _focus: {
+            outline: 'none',
+          },
+        }),
+        cssProp
       )}
+      {...props}
     />
   );
 };

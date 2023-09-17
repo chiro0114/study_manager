@@ -1,18 +1,38 @@
-import Button from "@/components/Button";
-import Select from "@/components/Select";
-import React from "react";
-import { AiOutlinePlus } from "react-icons/ai";
-import { VscTriangleDown } from "react-icons/vsc";
+import Button from '@/components/Button';
+import Select from '@/components/Select';
+import { css, cx } from '@/styled-system/css';
+import { neumorphism } from '@/styled-system/recipes';
+import React from 'react';
+import { AiOutlinePlus } from 'react-icons/ai';
 
 const TodoHeader = () => {
   return (
-    <div className="flex justify-between items-center mt-10">
+    <div
+      className={css({
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        mt: '40px',
+      })}
+    >
       <Select />
-      <div className="nueumorphism flex items-center justify-center w-14 h-14 rounded-full">
-        <Button>
-          <AiOutlinePlus className="text-acc h-9 w-9" />
-        </Button>
-      </div>
+      <Button
+        css={cx(
+          css({
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            w: '62px',
+            h: '62px',
+            borderRadius: '50%',
+          }),
+          neumorphism()
+        )}
+      >
+        <AiOutlinePlus
+          className={css({ display: 'block', h: '36px', w: '36px', color: 'secondary' })}
+        />
+      </Button>
     </div>
   );
 };

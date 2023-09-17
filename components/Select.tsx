@@ -1,6 +1,7 @@
-import React from "react";
-import { VscTriangleDown } from "react-icons/vsc";
-import { twMerge } from "tailwind-merge";
+import { css, cx } from '@/styled-system/css';
+import { neumorphism } from '@/styled-system/recipes';
+import React from 'react';
+import { VscTriangleDown } from 'react-icons/vsc';
 
 type SelectProps = {
   options?: string[];
@@ -10,11 +11,22 @@ type SelectProps = {
 
 const Select: React.FC<SelectProps> = ({ className }) => {
   return (
-    <div className={twMerge("nueumorphism flex items-center px-3 py-2 rounded-full", className)}>
-      <VscTriangleDown className="text-acc h-5 w-5" />
+    <div
+      className={cx(
+        css({ display: 'flex', alignItems: 'center', px: '12px', py: '8px', borderRadius: '50%' }),
+        neumorphism()
+      )}
+    >
+      <VscTriangleDown className={css({ color: 'primary', w: '20px', h: '20px' })} />
       <select
         name="displayMember"
-        className="bg-transparent color-cMain font-bold appearance-none text-base"
+        className={css({
+          backgroundColor: 'transparent',
+          fontSize: '16px',
+          color: 'main',
+          fontWeight: 'bold',
+          appearance: 'none',
+        })}
       >
         <option value="">表示メンバー</option>
       </select>

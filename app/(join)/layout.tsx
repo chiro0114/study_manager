@@ -1,3 +1,7 @@
+import { css } from '@/styled-system/css';
+
 export default function JoinLayout({ children }: { children: React.ReactNode }) {
-  return <div className="w-1/3 my-20 max-w-lg mx-auto nueumorphism">{children}</div>;
+  return (
+    <div className={css({ w: '33.3%', maxW: '512px', mt: '96px', mx: 'auto' })}>{children}</div>
+  );
 }

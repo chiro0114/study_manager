@@ -1,13 +1,27 @@
-import React from "react";
-import Input from "./Input";
-import { AiOutlineSearch } from "react-icons/ai";
+import React from 'react';
+import Input from './Input';
+import { AiOutlineSearch } from 'react-icons/ai';
+import { css, cx } from '@/styled-system/css';
+import { neumorphism } from '@/styled-system/recipes';
 
 const SearchBar = () => {
   return (
-    <div className="basis-7/12">
-      <div className="nueumorphism flex items-center gap-4 pl-8 py-3 rounded-full">
-        <AiOutlineSearch className="text-cMain h-6 w-6" />
-        <Input className="text-lg w-full mr-6" />
+    <div className={css({ flexBasis: '500px' })}>
+      <div
+        className={cx(
+          css({
+            display: 'flex',
+            alignItems: 'center',
+            gap: '16px',
+            pl: '32px',
+            py: '12px',
+            borderRadius: '100%',
+          }),
+          neumorphism()
+        )}
+      >
+        <AiOutlineSearch className={css({ w: '24px', h: '24px', color: 'main' })} />
+        <Input className={css({ w: '100%', fontSize: '18px', mr: '24px' })} />
       </div>
     </div>
   );

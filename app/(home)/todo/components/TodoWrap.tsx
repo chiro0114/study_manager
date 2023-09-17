@@ -1,17 +1,21 @@
-import React from "react";
-import TodoItem from "./TodoItem";
+'use client';
 
-type TodoWrapType = {
-  heading: string;
-};
+import React from 'react';
+import TodoList from './TodoList';
+import { css } from '@/styled-system/css';
 
-const TodoWrap: React.FC<TodoWrapType> = ({ heading }) => {
+const TodoItems = [
+  { id: 'todo', header: 'Todo' },
+  { id: 'doing', header: 'doing' },
+  { id: 'done', header: 'Done' },
+];
+
+const TodoWrap: React.FC = () => {
   return (
-    <div className="basis-1/3">
-      <div className="nueumorphism w-full py-3">
-        <h3 className="text-2xl font-bold text-center tracking-wide">{heading}</h3>
-      </div>
-      <TodoItem />
+    <div className={css({ display: 'flex', gap: '24px' })} draggable={true}>
+      {TodoItems.map((item) => (
+        <TodoList key={item.id} id={item.id} header={item.header} />
+      ))}
     </div>
   );
 };

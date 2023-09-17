@@ -1,12 +1,14 @@
-import React from "react";
+import { css, cx } from '@/styled-system/css';
+import { neumorphism } from '@/styled-system/recipes';
+import React from 'react';
 
 type CategoryTagProps = {
   text: string;
 };
 const CategoryTag: React.FC<CategoryTagProps> = ({ text }) => {
   return (
-    <div className="acc-nueumorphism w-fit px-3 rounded-full">
-      <p className="text-main text-xs">{text}</p>
+    <div className={cx(css({ color: 'red' }), neumorphism({ visual: 'acc' }))}>
+      <p className={css({ color: 'main', fontSize: '12px' })}>{text}</p>
     </div>
   );
 };

@@ -1,28 +1,35 @@
-import SidebarItem from "./SidebarItem";
+import { css, cx } from '@/styled-system/css';
+import SidebarItem from './SidebarItem';
+import { neumorphism } from '@/styled-system/recipes';
 
 const sidebarItems = [
   {
-    title: "Todo",
-    href: "/todo",
+    title: 'Todo',
+    href: '/todo',
   },
   {
-    title: "Diary",
-    href: "/diary",
+    title: 'Diary',
+    href: '/diary',
   },
   {
-    title: "List",
-    href: "/list",
+    title: 'List',
+    href: '/list',
   },
   {
-    title: "Logout",
-    href: "/logout",
+    title: 'Logout',
+    href: '/logout',
   },
 ];
 
 const Sidebar = () => {
   return (
-    <div className="nueumorphism rounded-md bg-main mt-28 ml-5">
-      <ul className="mt-7 mx-2 mb-24">
+    <div
+      className={cx(
+        css({ bg: 'main', borderRadius: '6px', mt: '112px', ml: '20px' }),
+        neumorphism()
+      )}
+    >
+      <ul className={css({ w: '100%', mt: '28px', mx: '8px', mb: '24px' })}>
         {sidebarItems.map((items) => (
           <SidebarItem key={items.href} items={items} />
         ))}
