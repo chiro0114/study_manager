@@ -6,11 +6,11 @@ type ButtonProps = {
   className?: string;
 } & ComponentProps<"button">;
 
-const Button: React.FC<ButtonProps> = ({ children, className }) => {
+const Button: React.FC<ButtonProps> = ({ children, className, ...props }) => {
   return (
-    <div>
-      <button className={twMerge(`font-bold cursor-pointer`, className)}>{children}</button>
-    </div>
+    <button {...props} className={twMerge(`block font-bold cursor-pointer`, className)}>
+      {children}
+    </button>
   );
 };
 

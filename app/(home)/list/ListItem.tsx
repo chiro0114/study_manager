@@ -1,6 +1,5 @@
 import CategoryTag from "@/components/CategoryTag";
 import React from "react";
-import { AiOutlineCalendar } from "react-icons/ai";
 
 const ListItem = () => {
   return (
@@ -8,7 +7,7 @@ const ListItem = () => {
       <div className="flex gap-2">
         <CategoryTag text="After Effects" />
       </div>
-      <h4 className="text-2xl font-bold mt-2 mb-3">タイトルタイトル</h4>
+      <h4 className="text-xl font-bold mt-3 mb-3">タイトルタイトル</h4>
     </div>
   );
 };
