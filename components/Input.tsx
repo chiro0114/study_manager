@@ -1,13 +1,14 @@
-import React, { ComponentProps } from "react";
+import React, { forwardRef } from "react";
 import { twMerge } from "tailwind-merge";
 
-type InputType = {
+type InputProps = {
   className?: string;
-} & ComponentProps<"input">;
+};
 
-const Input: React.FC<InputType> = ({ className, ...props }) => {
+const Input = forwardRef<HTMLInputElement, InputProps>(({ className, ...props }, ref) => {
   return (
     <input
+      ref={ref}
       type="text"
       {...props}
       className={twMerge(
@@ -16,6 +17,8 @@ const Input: React.FC<InputType> = ({ className, ...props }) => {
       )}
     />
   );
-};
+});
+
+Input.displayName = "Input";
 
 export default Input;
