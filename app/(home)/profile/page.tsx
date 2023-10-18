@@ -1,21 +1,36 @@
+"use client";
+
+import Button from "@/components/Button";
 import Input from "@/components/Input";
 import Textarea from "@/components/Textarea";
+import { ChangeEvent, useState } from "react";
 
 export default function Profile() {
+  const [inputProfile, setInputProfile] = useState({ image: "", name: "", desc: "" });
   return (
-    <div className="w-3/5 mx-auto mt-10 nueumorphism">
+    <div className="w-3/5 ml-16 mt-10 nueumorphism">
       <div className="p-4">
         <div className="flex justify-end">
-          <button className=" text-acc font-bold py-2 px-4  rounded-full nueumorphism">保存</button>
+          <Button
+            onClick={() => {}}
+            className="text-acc font-bold py-2 px-4 rounded-full nueumorphism"
+          >
+            保存
+          </Button>
         </div>
         <div className="max-w-lg mx-auto">
           <div className="mx-auto w-32 h-32 mt-3 rounded-full nueumorphism">
-            <img src="" alt="" />
+            <input type="file" />
           </div>
-          <div className="mt-8 border-b-4 border-acc pb-3">
+          <div className="w-2/3 border-b-4 border-acc pb-3 mx-auto mt-8">
             <Input
               placeholder="名前を入力"
-              className="w-40 text-xl font-bold text-center mx-auto"
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                setInputProfile((prev) => ({ ...prev, name: e.target.value }));
+              }}
+              maxLength={15}
+              value={inputProfile.name}
+              className="block w-full text-xl font-bold text-center mx-auto"
             />
           </div>
           <div className="mt-7 border border-cMain">

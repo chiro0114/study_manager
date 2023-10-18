@@ -1,9 +1,10 @@
+import Link from "next/link";
 import React from "react";
 import { AiOutlineCalendar } from "react-icons/ai";
 
 const DiaryItem = () => {
   return (
-    <div className="nueumorphism p-2 basis-60">
+    <Link href={""} className="nueumorphism p-2 basis-60">
       <div className="flex items-center">
         <AiOutlineCalendar className="w-5 h-5" />
         <p className="text-sm font-bold">2023/6/6</p>
@@ -14,7 +15,7 @@ const DiaryItem = () => {
           テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入...
         </p>
       </div>
-    </div>
+    </Link>
   );
 };
 

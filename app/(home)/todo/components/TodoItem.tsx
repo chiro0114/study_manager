@@ -5,7 +5,7 @@ import { MdCalendarToday } from "react-icons/md";
 
 const TodoItem = () => {
   return (
-    <Link href="/" className="block nueumorphism py-4 px-4 mt-6">
+    <div className="block nueumorphism py-4 px-4 mt-6">
       <div className="flex gap-2">
         <CategoryTag text="プログラミング" />
       </div>
@@ -19,7 +19,7 @@ const TodoItem = () => {
           <p className="ml-1 text-sm font-bold">6/6</p>
         </div>
       </div>
-    </Link>
+    </div>
   );
 };
 

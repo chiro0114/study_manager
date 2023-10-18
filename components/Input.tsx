@@ -1,9 +1,9 @@
-import React, { forwardRef } from "react";
+import React, { ComponentProps, forwardRef } from "react";
 import { twMerge } from "tailwind-merge";
 
 type InputProps = {
   className?: string;
-};
+} & ComponentProps<"input">;
 
 const Input = forwardRef<HTMLInputElement, InputProps>(({ className, ...props }, ref) => {
   return (

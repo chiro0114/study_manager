@@ -3,9 +3,11 @@
 import React, { useState } from "react";
 import { AiFillBell, AiOutlineUser } from "react-icons/ai";
 import Button from "../Button";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import { twMerge } from "tailwind-merge";
 
 const HeaderItems = () => {
+  const pathname = usePathname();
   const router = useRouter();
   const [openNotice, setOpenNotice] = useState(false);
   const headerItems = [
@@ -29,7 +31,10 @@ const HeaderItems = () => {
           <Button
             key={item.id}
             onClick={item.clickHandler}
-            className="nueumorphism p-5 rounded-full"
+            className={twMerge(
+              "p-5 rounded-full",
+              pathname === `/${item.id}` ? "press-neumorphism" : "nueumorphism"
+            )}
           >
             {<item.Icon className="w-6 h-6" />}
           </Button>
