@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { VscTriangleDown } from "react-icons/vsc";
 import { twMerge } from "tailwind-merge";
-import Button from "./Button";
+import { RxCross2 } from "react-icons/rx";
 
 type SelectItem = {
   id: string;
@@ -19,23 +19,26 @@ type SelectProps = {
 const Select: React.FC<SelectProps> = ({ selectTitle, listItems, className }) => {
   if (!listItems) return <></>;
 
-  const mergeListItems = listItems && listItems;
-  const [displayItem, setDisplayItem] = useState<SelectItem>(mergeListItems[0]);
-  const [displayAllItem, setDisplayAllItem] = useState(false);
+  const defaultDsiplayItem = { id: "all", name: selectTitle };
 
-  const targetItem = mergeListItems.find((filterItem) => displayItem.id === filterItem.id);
+  const [displayItem, setDisplayItem] = useState<SelectItem>(defaultDsiplayItem);
+  const [displayAllItem, setDisplayAllItem] = useState(false);
 
   const selectClickHandler = () => {
     setDisplayAllItem((prev) => !prev);
   };
 
   const selectItemClickHandler = (targetId: string) => {
-    const targetItemIndex = mergeListItems.findIndex((item) => item.id === targetId);
-    setDisplayItem(() => mergeListItems[targetItemIndex]);
+    const targetItemIndex = listItems.findIndex((item) => item.id === targetId);
+    setDisplayItem(() => listItems[targetItemIndex]);
     selectClickHandler();
   };
 
-  return (
+  const cancelSelectHandler = () => {
+    setDisplayItem(defaultDsiplayItem);
+  };
+
+  return displayItem.id === "all" ? (
     <div>
       <button
         onClick={selectClickHandler}
@@ -45,13 +48,13 @@ const Select: React.FC<SelectProps> = ({ selectTitle, listItems, className }) =>
         )}
       >
         <VscTriangleDown className="text-acc h-5 w-5" />
-        <p className="bg-transparent color-cMain font-bold appearance-none text-base">
-          <p className="ml-1">{displayItem.name === ""}</p>
-        </p>
+        <div className="bg-transparent color-cMain font-bold appearance-none text-base">
+          <p className="ml-1">{displayItem.name}</p>
+        </div>
       </button>
       {displayAllItem && (
         <ul className={twMerge("absolute bg-white min-w-[120px] rounded-md", className)}>
-          {mergeListItems.map((item) => {
+          {listItems.map((item) => {
             return (
               <li
                 key={item.id}
@@ -69,6 +72,20 @@ const Select: React.FC<SelectProps> = ({ selectTitle, listItems, className }) =>
           })}
         </ul>
       )}
+    </div>
+  ) : (
+    <div
+      className={twMerge(
+        "press-nueumorphism flex items-center px-3 py-2 rounded-full cursor-pointer",
+        className
+      )}
+    >
+      <div className="bg-transparent color-cMain font-bold appearance-none text-base">
+        <p className="ml-1">{displayItem.name}</p>
+      </div>
+      <button onClick={cancelSelectHandler} className="ml-2">
+        <RxCross2 className="w-5 h-5" />
+      </button>
     </div>
   );
 };

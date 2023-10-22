@@ -1,6 +1,5 @@
 "use client";
 
-import { db } from "@/db/firebase";
 import { useUser } from "@/store";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import React, { useEffect } from "react";
@@ -11,7 +10,6 @@ type InitProviderProps = {
 
 const InitProvider: React.FC<InitProviderProps> = ({ children }) => {
   const { user, initUser } = useUser();
-  const a = db;
   useEffect(() => {
     const auth = getAuth();
     onAuthStateChanged(auth, (user) => {

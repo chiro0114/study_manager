@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer components {
-  .press-neumorphism {
+  .press-nueumorphism {
     background: #efefef;
     box-shadow: -10px -10px 20px 0px #fff inset, 10px 10px 20px 0px #cbcbcb inset;
   }

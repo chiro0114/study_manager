@@ -22,7 +22,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({ items }) => {
         <Button
           className={twMerge(
             `text-3xl py-4  mb-5 w-52 rounded-full tracking-wide`,
-            href === pathname && "press-neumorphism"
+            href === pathname && "press-nueumorphism"
           )}
         >
           {title}

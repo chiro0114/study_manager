@@ -33,7 +33,7 @@ const HeaderItems = () => {
             onClick={item.clickHandler}
             className={twMerge(
               "p-5 rounded-full",
-              pathname === `/${item.id}` ? "press-neumorphism" : "nueumorphism"
+              pathname === `/${item.id}` ? "press-nueumorphism" : "nueumorphism"
             )}
           >
             {<item.Icon className="w-6 h-6" />}

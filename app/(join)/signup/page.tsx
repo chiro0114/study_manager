@@ -7,6 +7,8 @@ import FormOauth from "../components/FormOauth";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
 import { db } from "@/db/firebase";
+import { useTodos } from "@/store/todoStore";
+import { useUser } from "@/store";
 
 type SigninInputType = {
   email: string;
@@ -15,7 +17,8 @@ type SigninInputType = {
 };
 
 export default function Signup() {
-  const database = db;
+  const { createUser } = useUser();
+
   const {
     register,
     handleSubmit,
@@ -27,6 +30,7 @@ export default function Signup() {
     createUserWithEmailAndPassword(auth, data.email, data.password)
       .then((userCredential) => {
         console.log(userCredential);
+        createUser(userCredential.user.uid);
       })
       .catch((error) => {
         console.log(error.code, error.message);
