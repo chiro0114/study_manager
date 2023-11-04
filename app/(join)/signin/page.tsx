@@ -1,8 +1,8 @@
 "use client";
 
 import Button from "@/components/Button";
-import FormInput from "../components/FormInput";
-import FormOauth from "../components/FormOauth";
+import FormInput from "../_components/FormInput";
+import FormOauth from "../_components/FormOauth";
 import Link from "next/link";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";

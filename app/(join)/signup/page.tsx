@@ -2,8 +2,8 @@
 
 import Button from "@/components/Button";
 import Link from "next/link";
-import FormInput from "../components/FormInput";
-import FormOauth from "../components/FormOauth";
+import FormInput from "../_components/FormInput";
+import FormOauth from "../_components/FormOauth";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
 import { db } from "@/db/firebase";
