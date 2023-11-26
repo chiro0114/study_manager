@@ -2,7 +2,7 @@
 
 import Button from "@/components/Button";
 import FormInput from "../_components/FormInput";
-import FormOauth from "../_components/FormOauth";
+import FormOauth from "../_components/OauthLoginButton";
 import Link from "next/link";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
@@ -44,7 +44,6 @@ export default function Signin() {
       </form>
       <div className="mt-8">
         <FormOauth imagePath="/google-logo.png" innerText="Googleでログイン" />
-        <FormOauth imagePath="/line-logo.png" innerText="Lineでログイン" />
       </div>
       <div className="mt-10 text-center">
         <Link href="/signup" className="text-sm text-acc">

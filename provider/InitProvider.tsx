@@ -2,7 +2,8 @@
 
 import { useUser } from "@/store";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import React, { useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 type InitProviderProps = {
   children: React.ReactNode;
@@ -10,19 +11,22 @@ type InitProviderProps = {
 
 const InitProvider: React.FC<InitProviderProps> = ({ children }) => {
   const { user, initUser } = useUser();
+  const router = useRouter();
   useEffect(() => {
     const auth = getAuth();
     onAuthStateChanged(auth, (user) => {
       if (user) {
         initUser(user.uid);
       } else {
-        console.log("not loggedin");
+        router.push("/signin");
       }
     });
   }, []);
+
   useEffect(() => {
     console.log(user);
   }, [user]);
+
   return <>{children}</>;
 };
 

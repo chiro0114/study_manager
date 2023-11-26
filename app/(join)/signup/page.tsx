@@ -3,7 +3,7 @@
 import Button from "@/components/Button";
 import Link from "next/link";
 import FormInput from "../_components/FormInput";
-import FormOauth from "../_components/FormOauth";
+import OauthLoginButton from "../_components/OauthLoginButton";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
 import { db } from "@/db/firebase";
@@ -29,7 +29,6 @@ export default function Signup() {
     const auth = getAuth();
     createUserWithEmailAndPassword(auth, data.email, data.password)
       .then((userCredential) => {
-        console.log(userCredential);
         createUser(userCredential.user.uid);
       })
       .catch((error) => {
@@ -50,8 +49,7 @@ export default function Signup() {
         </div>
       </form>
       <div className="mt-8">
-        <FormOauth imagePath="/google-logo.png" innerText="Googleでログイン" />
-        <FormOauth imagePath="/line-logo.png" innerText="Lineでログイン" />
+        <OauthLoginButton imagePath="/google-logo.png" innerText="Googleでログイン" />
       </div>
       <div className="mt-10 text-center">
         <Link href="/signin" className="text-sm text-acc">
