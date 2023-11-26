@@ -1,11 +1,5 @@
-import ListHeader from "./ListHeader";
-import ListWrap from "./ListWrap";
+import ListPage from "./_components/List.page";
 
-export default function List() {
-  return (
-    <div className="mr-16">
-      <ListHeader />
-      <ListWrap />
-    </div>
-  );
+export default function Page() {
+  return <ListPage />;
 }

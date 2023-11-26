@@ -1,11 +1,5 @@
-import DiaryHeader from "./components/DiaryHeader";
-import { DiaryWrap } from "./components/DiaryWrap";
+import DiaryPage from "./_components/Diary.page";
 
-export default function Diary() {
-  return (
-    <div className="mr-16">
-      <DiaryHeader />
-      <DiaryWrap />
-    </div>
-  );
+export default function Page() {
+  return <DiaryPage />;
 }
