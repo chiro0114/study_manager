@@ -1,5 +1,5 @@
-import Article from "@/components/article";
-import React from "react";
+import Article from '@/components/article';
+import React from 'react';
 
 const ListArticle = () => {
   return <Article />;

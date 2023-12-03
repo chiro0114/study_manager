@@ -1,12 +1,12 @@
-"use clinet";
+'use clinet';
 
-import TodoWrap from "./TodoWrap";
+import TodoWrap from './TodoWrap';
 
 export default function Todo() {
   const todoKinds = [
-    { id: "todo", heading: "Todo" },
-    { id: "doing", heading: "Doing" },
-    { id: "done", heading: "Done" },
+    { id: 'todo', heading: 'Todo' },
+    { id: 'doing', heading: 'Doing' },
+    { id: 'done', heading: 'Done' },
   ];
   return (
     <div className="mr-16">

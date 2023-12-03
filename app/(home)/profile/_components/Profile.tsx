@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import Button from "@/components/Button";
-import Input from "@/components/Input";
-import Textarea from "@/components/Textarea";
-import { ChangeEvent, useState } from "react";
+import Button from '@/components/Button';
+import Input from '@/components/Input';
+import Textarea from '@/components/Textarea';
+import { ChangeEvent, useState } from 'react';
 
 export default function Profile() {
-  const [inputProfile, setInputProfile] = useState({ image: "", name: "", desc: "" });
+  const [inputProfile, setInputProfile] = useState({ image: '', name: '', desc: '' });
   return (
     <div className="w-3/5 ml-16 mt-10 nueumorphism">
       <div className="p-4">
