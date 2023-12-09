@@ -1,8 +1,13 @@
-import React from "react";
-import List from "./List";
+import React from 'react';
+import List from './List';
+import WithAuthProvider from '@/provider/WithAuthProvider';
 
 const ListPage = () => {
-  return <List />;
+  return (
+    <WithAuthProvider>
+      <List />
+    </WithAuthProvider>
+  );
 };
 
 export default ListPage;
