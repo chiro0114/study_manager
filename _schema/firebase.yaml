@@ -1,0 +1,34 @@
+users:
+  userId:
+    profile:
+      thumbnail: string
+      name: string
+      desc: string
+    opendNoticeIds:
+      - noticeId
+    participated_group:
+      - gourpId:string
+    first_login: string
+    last_login: string
+groups:
+  groupId:
+    todos:
+      todoId:
+        author_id: string
+        title: string
+        term?: number
+        status: string
+        is_archived: boolean
+    Diarys:
+      diaryId:
+        author_id: string
+        title: string
+        content: string
+        update_at: number
+    List:
+      listId:
+        author_id: string
+        title: string
+        content: string
+        tags: string
+        update_at: number
