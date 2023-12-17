@@ -18,13 +18,17 @@ groups:
         title: string
         term?: number
         status: string
+        deadline: number
         is_archived: boolean
+        timestamp: number
     Diarys:
       diaryId:
         author_id: string
         title: string
         content: string
         update_at: number
+        is_archived: boolean
+        timestamp: number
     List:
       listId:
         author_id: string
@@ -32,3 +36,5 @@ groups:
         content: string
         tags: string
         update_at: number
+        is_archived: boolean
+        timestamp: number

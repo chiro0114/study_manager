@@ -1,13 +1,7 @@
+import { UserAuthType } from '@/types/userAuthType';
 import { create } from 'zustand';
-import { db } from '@/db/firebase';
-import { User } from 'firebase/auth';
 
-type UserType = {
-  userAuth: User | null;
-  setUserAuth: (user: User) => void;
-};
-
-export const useUserAuthStore = create<UserType>((set) => ({
-  userAuth: null,
+export const useUserAuthStore = create<UserAuthType>((set) => ({
+  userAuth: undefined,
   setUserAuth: (userAuth) => set({ userAuth }),
 }));
